@@ -1,0 +1,16 @@
+.banner {
+  display: flex;
+  align-items: center;
+}
+
+/* .image_container {
+  width: 40%;
+} */
+
+.image_container > img {
+  width: 100%;
+}
+
+.banner_content {
+  width: 60%;
+}

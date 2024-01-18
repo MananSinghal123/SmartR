@@ -1,0 +1,25 @@
+.footer {
+  background-color: black;
+  color: white;
+  width: 100%;
+  bottom: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+}
+
+.footer_links {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer_links > li {
+  margin: 0 20px;
+  cursor: pointer;
+}
