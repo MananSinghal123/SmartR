@@ -1,0 +1,16 @@
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.input {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+}
+
+.input > label {
+  margin-right: 5px;
+}

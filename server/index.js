@@ -3,8 +3,14 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 import { ErrorMiddleware } from "./middleware/error.js";
 import userRouter from "./routes/userRouter.js";
+import connectDB from "./utils/db.js";
 
 export const app = express();
+
+app.listen(process.env.PORT, () => {
+  console.log("Server running on PORT : " + process.env.PORT);
+  connectDB();
+});
 
 app.use(express.json({ limit: "50mb" }));
 app.use(cookieParser());

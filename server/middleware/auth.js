@@ -1,10 +1,8 @@
-import { Request, Response, NextFunction } from "express";
-import { CatchAsyncError } from "./catchAsyncErrors";
-import ErrorHandler from "../utils/ErrorHandler";
+import userModel from "../model/user.model.js";
+import ErrorHandler from "../utils/ErrorHandler.js";
 import jwt from "jsonwebtoken";
-require("dotenv").config();
-import { redis } from "../utils/redis";
-
+import dotenv from "dotenv";
+dotenv.config();
 export const isAuthenticated = async (req, res, next) => {
   const access_token = req.cookies.access_token;
 
@@ -17,13 +15,15 @@ export const isAuthenticated = async (req, res, next) => {
   if (!decoded) {
     return next(new ErrorHandler("access token is not valid", 400));
   }
-  const user = await redis.get(decoded.id);
+  const user = await userModel.find({ _id: decoded.id });
+
+  // console.log(user[0]);
 
   if (!user) {
     return next(new ErrorHandler("Please login to access this resource", 400));
   }
 
-  req.user = JSON.parse(user);
+  req.user = user;
 
   next();
 };

@@ -1,0 +1,5 @@
+.lazy-load-image-background {
+  display: flex !important ;
+  justify-content: center;
+  align-items: center;
+}

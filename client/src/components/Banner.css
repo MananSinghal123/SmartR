@@ -1,0 +1,35 @@
+.banner {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.image_container > img {
+  /* margin: 10% 0 0 3%; */
+  max-width: 20em;
+}
+
+.banner_content {
+  max-width: 20em;
+  padding: 10%;
+}
+
+.banner_content > h1 {
+  font-size: 1.5em;
+}
+
+.banner_content > h2 {
+  font-size: 1.3em;
+  font-weight: 100;
+}
+
+.buttons > button {
+  margin-right: 25px;
+  margin-bottom: 10px;
+  color: white;
+  background-color: black;
+  font-size: 1em;
+  border-radius: 10px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
